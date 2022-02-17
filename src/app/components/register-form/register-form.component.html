@@ -1,3 +1,58 @@
 <div class="container">
-  <h1>register-form works!</h1>
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="my-4">Sign Up</h1>
+      <form
+        #signUpForm="ngForm"
+        (ngSubmit)="handleFormSubmit(signUpForm.value)"
+      >
+        <div class="row mb-3">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="First name"
+              aria-label="First name"
+              name="firstName"
+              ngModel
+            />
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Last name"
+              aria-label="Last name"
+              name="lastName"
+              ngModel
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            name="email"
+            ngModel
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="password"
+            ngModel
+          />
+        </div>
+
+        <button type="submit" class="btn btn-outline-dark">Submit</button>
+      </form>
+    </div>
+  </div>
 </div>

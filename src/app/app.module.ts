@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ViewUserComponent } from './components/view-user/view-user.component';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { UserTableComponent } from './components/user-table/user-table.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { UserTableComponent } from './components/user-table/user-table.component
     HomeComponent,
     ViewUserComponent,
     RegisterFormComponent,
-    UserTableComponent
+    UserTableComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
