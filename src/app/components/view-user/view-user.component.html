@@ -1,0 +1,23 @@
+<div class="container-fluid d-flex justify-content-center bg-info p-5">
+  <div>
+    <h1>User Details</h1>
+    <p>********************************</p>
+    <div>
+      <h5>
+        ID: <span>{{ id }}</span>
+      </h5>
+      <h5>
+        Name: <span>{{ name }}</span>
+      </h5>
+      <h5>
+        Address: <span>{{ address }}</span>
+      </h5>
+      <h5>
+        Age: <span>{{ age }}</span>
+      </h5>
+    </div>
+    <button class="btn btn-outline-secondary btn-sm" (click)="onClickBack()">
+      Back
+    </button>
+  </div>
+</div>
