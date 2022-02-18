@@ -1,0 +1,89 @@
+<div class="container mb-4">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1>Reactive Form</h1>
+      <form [formGroup]="reactiveform">
+        <div class="mb-3">
+          <label> FullName <span class="text-danger">*</span></label>
+          <input
+            formControlName="name"
+            type="text"
+            class="form-control"
+            aria-label="User First Name"
+          />
+          <span
+            *ngIf="
+              submited ||
+              forms['name'].dirty ||
+              (forms['name'].touched && forms['name'].invalid)
+            "
+            class="info-msg text.danger"
+          >
+            <small
+              *ngIf="forms['name'].errors && forms['name'].errors"
+              class="text-danger"
+            >
+              Name is required</small
+            >
+          </span>
+        </div>
+        <div class="mb-3">
+          <label> Email <span class="text-danger">*</span></label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            name="email"
+            formControlName="email"
+          />
+          <span
+            *ngIf="
+              submited ||
+              forms['email'].dirty ||
+              (forms['email'].touched && forms['email'].invalid)
+            "
+            class="text.danger"
+          >
+            <small
+              *ngIf="forms['name'].errors && forms['name'].errors"
+              class="text-danger"
+              >Email is required</small
+            >
+          </span>
+        </div>
+        <div class="mb-3">
+          <label> Password <span class="text-danger">*</span></label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            name="password"
+            formControlName="password"
+          />
+          <span
+            *ngIf="
+              submited ||
+              forms['password'].dirty ||
+              (forms['password'].touched && forms['password'].invalid)
+            "
+            class="info-msg text.danger"
+          >
+            <small
+              class="text-danger"
+              *ngIf="forms['name'].errors && forms['name'].errors"
+              >Password is required</small
+            ></span
+          >
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-outline-dark"
+          (click)="onSubmitForm(reactiveform)"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
