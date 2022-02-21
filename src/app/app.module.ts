@@ -9,6 +9,7 @@ import { RegisterFormComponent } from './components/register-form/register-form.
 import { UserTableComponent } from './components/user-table/user-table.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     UserTableComponent,
     ReactiveFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
