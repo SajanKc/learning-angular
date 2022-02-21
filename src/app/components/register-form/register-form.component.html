@@ -9,6 +9,8 @@
         <div class="row mb-3">
           <div class="col">
             <input
+              required
+              #firstName="ngModel"
               type="text"
               class="form-control"
               placeholder="First name"
@@ -16,9 +18,17 @@
               name="firstName"
               ngModel
             />
+            <span
+              *ngIf="firstName.invalid && firstName.touched"
+              class="text-danger"
+            >
+              First Name is required.
+            </span>
           </div>
           <div class="col">
             <input
+              required
+              #lastName="ngModel"
               type="text"
               class="form-control"
               placeholder="Last name"
@@ -26,32 +36,61 @@
               name="lastName"
               ngModel
             />
+            <span
+              *ngIf="lastName.invalid && lastName.touched"
+              class="text-danger"
+            >
+              Last Name is required.
+            </span>
           </div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
+          <label for="exampleInputEmail1" class="form-label">
+            Email address
+          </label>
           <input
+            required
+            #email="ngModel"
+            email
             type="email"
+            placeholder="Email"
             class="form-control"
             id="exampleInputEmail1"
             name="email"
             ngModel
           />
+          <span *ngIf="email.invalid && email.touched" class="text-danger">
+            Email is required.
+          </span>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input
+            required
+            #password="ngModel"
+            [minlength]="6"
             type="password"
+            placeholder="Password"
             class="form-control"
             id="exampleInputPassword1"
             name="password"
             ngModel
           />
+          <span
+            *ngIf="password.invalid && password.touched"
+            class="text-danger"
+          >
+            Password is required and must have atleast 6 character.
+          </span>
         </div>
 
-        <button type="submit" class="btn btn-outline-dark">Submit</button>
+        <button
+          type="submit"
+          class="btn btn-outline-dark"
+          [disabled]="signUpForm.invalid"
+        >
+          Submit
+        </button>
       </form>
     </div>
   </div>
